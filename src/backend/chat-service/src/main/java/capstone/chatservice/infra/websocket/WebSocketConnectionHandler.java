@@ -34,6 +34,7 @@ public class WebSocketConnectionHandler implements ChannelInterceptor {
     private static final String AUTH_PREFIX = "Authorization";
     private static final String USER_ID = "userId";
 
+
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(message);

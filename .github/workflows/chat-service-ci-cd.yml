@@ -70,11 +70,11 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USERNAME }}/chat-service:1.0
 
       - name: GCP 인스턴스 접속 및 무중단 배포
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          host: ${{ secrets.GCP_HOST }}
+          username: ${{ secrets.GCP_USERNAME }}
+          key: ${{ secrets.GCP_SSH_KEY }}
           script: |
             cd script
             ./chat-update.sh
